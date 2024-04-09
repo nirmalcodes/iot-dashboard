@@ -11,7 +11,8 @@
     --scrollbar-size: 12px;
     --scrollbar-thumb-radius: 16px;
 
-    --bakcground: #ffffff;
+    --background: #fafafa;
+    --sidebar-width: 240px;
 }
 
 *,
@@ -28,7 +29,7 @@
     height: var(--scrollbar-size);
 }
 ::-webkit-scrollbar-track {
-    background: var(--bakcground);
+    background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
     border-radius: var(--scrollbar-thumb-radius);
@@ -42,12 +43,62 @@ body,
 #root {
     position: relative;
     min-height: 100vh;
-    @apply overflow-x-hidden bg-[var(--bakcground)];
+    overflow-x: hidden;
+    background-color: var(--background);
 }
 
 #root {
     display: flex;
+    flex-grow: 1;
 }
 
 @layer components {
+    .sidebar,
+    .navbar {
+        @apply fixed top-0 flex bg-white transition-all duration-300 ease-in-out;
+    }
+
+    .sidebar {
+        @apply left-0 z-[3200] h-full w-0 flex-[0_0_auto] flex-col overflow-hidden border-r;
+    }
+
+    .sidebar--open ~ .sidebar {
+        @apply w-[var(--sidebar-width)];
+    }
+
+    .sidebar__header {
+        @apply flex h-16 flex-shrink-0 items-center justify-start px-4 py-2 text-base;
+    }
+
+    .sidebar__list {
+        @apply flex h-full flex-shrink-0 flex-col overflow-y-auto py-2;
+    }
+
+    .sidebar__list-item {
+        @apply relative flex w-full items-center justify-start text-left;
+    }
+
+    .sidebar__link {
+        @apply w-full px-4 py-2 text-base transition-all duration-150 ease-in-out hover:bg-gray-100;
+    }
+
+    .sidebar__link.active {
+        @apply bg-gray-100;
+    }
+
+    .navbar {
+        @apply left-auto right-0 z-[3000] h-16 w-full flex-shrink-0 items-center border-b px-4 py-2 text-base;
+    }
+
+    .sidebar--open {
+        @apply ml-[240px] w-[calc(100%_-_240px)];
+    }
+
+    .main {
+        @apply ml-0 flex-grow p-4 transition-all duration-300 ease-in-out;
+    }
+
+    .sidebar--open ~ .main {
+        @apply ml-[var(--sidebar-width)];
+    }
 }
