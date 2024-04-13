@@ -7,6 +7,7 @@ import ProtectedRoute from './components/ProtectedRoute/index.jsx';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import Layout from './components/Layout/index.jsx';
 
 const App = () => {
     return (
@@ -17,9 +18,9 @@ const App = () => {
                         <Route
                             path='/'
                             element={
-                                <ProtectedRoute>
+                                <Layout>
                                     <Home />
-                                </ProtectedRoute>
+                                </Layout>
                             }
                         />
                         <Route path='/signin' element={<SignIn />} />
