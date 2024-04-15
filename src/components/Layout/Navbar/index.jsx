@@ -22,7 +22,7 @@ const Navbar = () => {
                 <div className='ml-auto'>
                     <button
                         type='button'
-                        className='rounded-full p-2 leading-none transition-all duration-150 ease-in-out hover:bg-gray-100'
+                        className='rounded-full p-2 leading-none ring-0 transition-all duration-150 ease-in-out hover:bg-gray-100 focus:ring-transparent'
                     >
                         <FaUser />
                     </button>
