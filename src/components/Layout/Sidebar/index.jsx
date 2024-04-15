@@ -1,5 +1,5 @@
-import { Link, NavLink } from 'react-router-dom';
-import Collapsible from './Collapsible';
+import { NavLink } from 'react-router-dom';
+import Collapsible from '../../Collapsible';
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa6';
 
@@ -24,7 +24,7 @@ const Sidebar = () => {
                     <button
                         type='button'
                         onClick={toggleCollapse}
-                        className='sidebar__link flex items-center'
+                        className='sidebar__link dropdown__toggle'
                     >
                         Link Btn
                         <div
