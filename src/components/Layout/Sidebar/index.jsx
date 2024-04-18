@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Collapsible from '../../Collapsible';
-import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa6';
 
 const Sidebar = () => {
@@ -17,7 +17,7 @@ const Sidebar = () => {
             <ul className='sidebar__list'>
                 <li className='sidebar__list-item'>
                     <NavLink to={'/'} className='sidebar__link'>
-                        First Link
+                        Home
                     </NavLink>
                 </li>
                 <li className='sidebar__list-item'>
@@ -26,7 +26,7 @@ const Sidebar = () => {
                         onClick={toggleCollapse}
                         className='sidebar__link dropdown__toggle'
                     >
-                        Link Btn
+                        Settings
                         <div
                             className={`ml-auto transition-all duration-150 ease-out ${isOpen ? '-rotate-180' : ''}`}
                         >
@@ -41,7 +41,7 @@ const Sidebar = () => {
                                     to={'/455'}
                                     className='sidebar__link dropdown__link'
                                 >
-                                    Link
+                                    Settings Link 1
                                 </NavLink>
                             </li>
                             <li>
@@ -49,7 +49,7 @@ const Sidebar = () => {
                                     to={'/test'}
                                     className='sidebar__link dropdown__link'
                                 >
-                                    Link
+                                    Settings Link 2
                                 </NavLink>
                             </li>
                             <li>
@@ -57,7 +57,7 @@ const Sidebar = () => {
                                     to={'/test'}
                                     className='sidebar__link dropdown__link'
                                 >
-                                    Link
+                                    Settings Link 3
                                 </NavLink>
                             </li>
                         </ul>
