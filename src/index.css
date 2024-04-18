@@ -103,7 +103,7 @@ body,
     }
 
     .main {
-        @apply ml-0 flex-grow p-4 transition-all duration-300 ease-in-out;
+        @apply ml-0 flex-shrink-0 flex-grow p-4 transition-all duration-300 ease-in-out;
     }
 
     .sidebar--open ~ .main {
